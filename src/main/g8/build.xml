@@ -1,0 +1,12 @@
+<project name="temperature converter">
+	<target name="build">
+		<taskdef name="jarjar" classname="com.tonicsystems.jarjar.JarJarTask" classpath="jarjar.jar" />
+		<jarjar destfile="converter.jar" manifest="Manifest.mf">
+			<zipfileset src="scala-library.jar" />
+			<zipgroupfileset dir="lib" includes="*.jar" />
+			<fileset dir="./target/scala_2.8.1/classes/">
+				<include name="Converter.class" />
+			</fileset>
+		</jarjar>
+	</target>
+ </project>
